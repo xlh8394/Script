@@ -376,6 +376,7 @@ function main(config) {
     "DOMAIN-SUFFIX,gwdang.com,DIRECT",
     "DOMAIN-SUFFIX,iqiyi.com,DIRECT",
     "DOMAIN-KEYWORD,carryz,DIRECT",
+    "DOMAIN-KEYWORD,aliz,DIRECT",
     "DOMAIN-SUFFIX,googleapis.com,AI",
     "DOMAIN-SUFFIX,gemini.google.com,AI",
     "DOMAIN-SUFFIX,sexbjcam.com,AI",
