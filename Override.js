@@ -150,6 +150,13 @@ function main(config) {
     },
     {
       ...groupBaseOption,
+      "name": "Spotify",
+      "type": "select",
+      "proxies": ["手动切换", "香港节点", "美国节点", "狮城节点", "日本节点", "台湾节点", "DIRECT"],
+      "icon": "https://fastly.jsdelivr.net/gh/Koolson/Qure@master/IconSet/Color/Spotify.png"
+    },
+    {
+      ...groupBaseOption,
       "name": "AI",
       "type": "select",
       "proxies": ["手动切换", "香港节点", "美国节点", "狮城节点", "日本节点", "台湾节点", "DIRECT"],
@@ -391,7 +398,7 @@ function main(config) {
     "RULE-SET,Steam,游戏平台",
     "RULE-SET,Epic,游戏平台",
     "RULE-SET,Emby,Emby",
-    "RULE-SET,Spotify,国际媒体",
+    "RULE-SET,Spotify,Spotify",
     "RULE-SET,Bahamut,国际媒体",
     "RULE-SET,Netflix,国际媒体",
     "RULE-SET,Disney,国际媒体",
