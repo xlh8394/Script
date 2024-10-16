@@ -378,7 +378,6 @@ function main(config) {
   // 覆盖规则
   config["rules"] = [
   // 自定义规则
-    "DOMAIN-SUFFIX,misakaf.org,国际媒体",
     "DOMAIN-SUFFIX,jd.com,DIRECT",
     "DOMAIN-SUFFIX,gwdang.com,DIRECT",
     "DOMAIN-SUFFIX,iqiyi.com,DIRECT",
