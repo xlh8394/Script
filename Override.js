@@ -198,7 +198,7 @@ function main(config) {
       "type": "url-test",
       "tolerance": 50,
       "include-all": true,
-      "interval": 600",
+      "interval": 600,
       "icon": "https://ghp.ci/https://raw.githubusercontent.com/Orz-3/mini/master/Color/Urltest.png"
     },
     {
