@@ -101,6 +101,15 @@ function main(config) {
     },
     {
       ...groupBaseOption,
+      "name": "自动选择",
+      "type": "url-test",
+      "tolerance": 50,
+      "include-all": true,
+      "interval": 600,
+      "icon": "https://fastly.jsdelivr.net/gh/Koolson/Qure@master/IconSet/Color/Auto.png"
+    },
+    {
+      ...groupBaseOption,
       "name": "国外网站",
       "type": "select",
       "proxies": ["手动切换", "香港节点", "美国节点", "狮城节点", "日本节点", "台湾节点", "DIRECT"],
@@ -192,15 +201,6 @@ function main(config) {
       "icon": "https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Final.png"
     },
     // 地区分组
-    {
-      ...groupBaseOption,
-      "name": "自动选择",
-      "type": "url-test",
-      "tolerance": 50,
-      "include-all": true,
-      "interval": 600,
-      "icon": "https://ghp.ci/https://raw.githubusercontent.com/Orz-3/mini/master/Color/Urltest.png"
-    },
     {
       ...groupBaseOption,
       "name": "香港节点",
