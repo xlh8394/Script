@@ -378,9 +378,6 @@ function main(config) {
   // 覆盖规则
   config["rules"] = [
   // 自定义规则
-    "DOMAIN,stream1.misakaf.org,DIRECT",
-    "DOMAIN,stream2.misakaf.org,DIRECT",
-    "DOMAIN,stream3.misakaf.org,DIRECT",
     "DOMAIN-SUFFIX,jd.com,DIRECT",
     "DOMAIN-SUFFIX,gwdang.com,DIRECT",
     "DOMAIN-SUFFIX,iqiyi.com,DIRECT",
