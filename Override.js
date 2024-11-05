@@ -388,6 +388,7 @@ function main(config) {
     "DOMAIN-SUFFIX,googleapis.com,AI",
     "DOMAIN-SUFFIX,gemini.google.com,AI",
     "DOMAIN-SUFFIX,sexbjcam.com,AI",
+    "DOMAIN-SUFFIX,felo.me,AI",
   // 其他规则
     "RULE-SET,AD,广告拦截",
     "RULE-SET,AI,AI",
