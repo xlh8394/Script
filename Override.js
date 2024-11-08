@@ -384,6 +384,7 @@ function main(config) {
     "DOMAIN-SUFFIX,iqiyi.com,DIRECT",
     "DOMAIN-KEYWORD,carryz,Emby",
  // "DOMAIN-KEYWORD,carryz,DIRECT",
+    "DOMAIN-SUFFIX,cdn.hinet.net,台湾节点",
     "DOMAIN-KEYWORD,aliz,Emby",
     "DOMAIN-SUFFIX,googleapis.com,AI",
     "DOMAIN-SUFFIX,gemini.google.com,AI",
