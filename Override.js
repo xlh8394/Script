@@ -383,6 +383,7 @@ function main(config) {
     "DOMAIN-SUFFIX,gwdang.com,DIRECT",
     "DOMAIN-SUFFIX,iqiyi.com,DIRECT",
     "DOMAIN-SUFFIX,cnpassport.youku.com,DIRECT",
+    "DOMAIN-SUFFIX,user.anjuke.com,DIRECT",
     "DOMAIN-KEYWORD,carryz,Emby",
  // "DOMAIN-KEYWORD,carryz,DIRECT",
     "DOMAIN-SUFFIX,cdn.hinet.net,台湾节点",
