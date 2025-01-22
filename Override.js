@@ -389,6 +389,7 @@ function main(config) {
  // "DOMAIN-KEYWORD,carryz,DIRECT",
     "DOMAIN-SUFFIX,cdn.hinet.net,台湾节点",
     "DOMAIN-KEYWORD,aliz,Emby",
+    "DOMAIN-SUFFIX,video.mytvsuper.xyz,Emby",
     "DOMAIN-SUFFIX,googleapis.com,AI",
     "DOMAIN-SUFFIX,gemini.google.com,AI",
     "DOMAIN-SUFFIX,sexbjcam.com,AI",
