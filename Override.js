@@ -378,7 +378,7 @@ function main(config) {
   // 覆盖规则
   config["rules"] = [
   // 自定义规则
-    "DOMAIN-SUFFIX,aktv.top,DIRECT",
+    "DOMAIN-SUFFIX,aktv.top,Emby",
     "DOMAIN-SUFFIX,jd.com,DIRECT",
     "DOMAIN-SUFFIX,gwdang.com,DIRECT",
     "DOMAIN-SUFFIX,iqiyi.com,DIRECT",
