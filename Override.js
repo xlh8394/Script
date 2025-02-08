@@ -378,6 +378,7 @@ function main(config) {
   // 覆盖规则
   config["rules"] = [
   // 自定义规则
+    "IP-CIDR,2602:294:0:b7:1234:1234:26bc:1/128,DIRECT",
     "DOMAIN-SUFFIX,aktv.top,Emby",
     "DOMAIN-SUFFIX,jd.com,DIRECT",
     "DOMAIN-SUFFIX,gwdang.com,DIRECT",
