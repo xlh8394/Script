@@ -181,6 +181,7 @@ function main(config) {
       ...groupBaseOption,
       "name": "广告拦截",
       "type": "select",
+      "include-all": true,
       "proxies": ["REJECT", "DIRECT"],
       "icon": "https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Advertising.png"
     },
