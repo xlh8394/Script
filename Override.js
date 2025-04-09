@@ -296,6 +296,12 @@ function main(config) {
       "url": "https://github.com/Repcz/Tool/raw/X/Clash/Rules/AI.list",
       "path": "./rule-providers/AI.list"
     },
+    "Copilot": {
+      ...ruleProviderCommon,
+      "behavior": "classical",
+      "url": "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/refs/heads/master/rule/Clash/Copilot/Copilot.list",
+      "path": "./rule-providers/Copilot.list"
+    },
     "Emby": {
       ...ruleProviderCommon,
       "behavior": "classical",
@@ -399,6 +405,7 @@ function main(config) {
   // 其他规则
     "RULE-SET,AD,广告拦截",
     "RULE-SET,AI,AI",
+    "RULE-SET,Copilot,AI",
     "RULE-SET,Apple,苹果服务",
     "RULE-SET,YouTube,谷歌服务",
     "RULE-SET,Google,谷歌服务",
