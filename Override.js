@@ -248,6 +248,12 @@ function main(config) {
       "url": "https://github.com/Repcz/Tool/raw/X/Clash/Rules/Reject.list",
       "path": "./rule-providers/AD.list"
     },
+    "DouYin": {
+      ...ruleProviderCommon,
+      "behavior": "classical",
+      "url": "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/refs/heads/master/rule/Clash/DouYin/DouYin.list",
+      "path": "./rule-providers/DouYin.list"
+    },
     "Apple": {
       ...ruleProviderCommon,
       "behavior": "classical",
@@ -424,6 +430,7 @@ function main(config) {
     "GEOSITE,github,国际媒体",
     "GEOSITE,microsoft,微软服务",
     "GEOSITE,gfw,国外网站",
+    "RULE-SET,DouYin,DIRECT",
     "RULE-SET,China,DIRECT",
     "GEOIP,lan,DIRECT",
     "GEOIP,CN,DIRECT",
