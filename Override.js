@@ -1,9 +1,5 @@
-// 参考 Verge Rev 示例 Script 配置
-//
-// Clash Verge Rev (Version ≥ 17.2) & Mihomo-Party (Version ≥ 0.5.8)
-//
-// 最后更新时间: 2024-8-24 22:00
-
+// Clash Verge Rev Script 配置
+// 
 // 规则集通用配置
 const ruleProviderCommon = {
   "type": "http",
@@ -29,6 +25,10 @@ function main(config) {
 
   // 覆盖通用配置
   config["mixed-port"] = "7890";
+  config["clash-core"] = "mihomo";
+  config["tcp-fast-open"] = true;
+  config["udp-fallback-policy"] = "restricted";  // 限制UDP回退
+  config["enable-process"] = true;  // 进程级流量监控
   config["tcp-concurrent"] = true;
   config["allow-lan"] = true;
   config["ipv6"] = false;
@@ -44,14 +44,56 @@ function main(config) {
     "enable": true,
     "listen": "0.0.0.0:1053",
     "ipv6": false,
+    "prefer-h3": true,  // 启用HTTP/3协议
     "enhanced-mode": "fake-ip",
     "fake-ip-range": "198.18.0.1/16",
-    "fake-ip-filter": ["*", "+.lan", "+.local", "+.direct", "+.msftconnecttest.com", "+.msftncsi.com"],
-    "default-nameserver": ["223.5.5.5", "119.29.29.29", "system"],
-    "nameserver": ["223.5.5.5", "119.29.29.29"],
+    "fake-ip-filter": [
+      // 系统必要域名
+      "+.lan", "+.local", "+.arpa",
+      // 网络检测
+      "+.msftconnecttest.com", "+.msftncsi.com",
+      // 防泄漏关键过滤
+      "+.stun.*", "stun.*.*", "+.stun.*.*.*",
+      "+.ipcheck.*", "+.ip*.com", "+.dnsleak.*",
+      "detectportal.firefox.com",
+      "network-test.debian.org",
+      "resolve-*.cloudfront.net",
+      "*.ipify.org", "*.icanhazip.com",
+      "*.whoami.akamai.net",
+      // 中国CDN域名（防止误判）
+      "*.qq.com", "*.taobao.com", "*.alicdn.com"
+    ],
+    "default-nameserver": [
+      "tls://223.5.5.5:853",  // 阿里加密DNS
+      "https://dns.alidns.com/dns-query",
+      "system"
+    ],
+    "nameserver": [
+      "https://1.1.1.1/dns-query?ct=application/dns-message",  // Cloudflare DoH
+      "tls://8.8.4.4:853",  // Google DoT
+      "quic://dns.adguard.com:853"  // QUIC协议
+    ],
+    "fallback": [
+      "tls://1.0.0.1:853",
+      "https://doh.opendns.com/dns-query",
+      "tls://dns.google:853"
+    ],
     "nameserver-policy": {
-      "geosite:cn": "system",
-      "geosite:gfw,geolocation-!cn": ["quic://223.5.5.5", "quic://223.6.6.6", "https://1.12.12.12/dns-query", "https://120.53.53.53/dns-query"]
+      "geosite:cn": ["tls://223.5.5.5:853", "system"],
+      "geosite:category-games@cn": "system",  // 游戏直连
+      "geosite:gfw": [
+        "https://1.1.1.1/dns-query",
+        "tls://8.8.4.4:853"
+      ]
+    },
+    "fallback-filter": {
+      "geoip": true,
+      "geoip-code": "CN",
+      "ipcidr": [
+        "0.0.0.0/8", "10.0.0.0/8",
+        "127.0.0.0/8", "172.16.0.0/12",
+        "192.168.0.0/16"
+      ]
     }
   };
 
@@ -86,7 +128,17 @@ function main(config) {
   config["tun"] = {
     "enable": true,
     "stack": "mixed",
-    "dns-hijack": ["any:53"]
+    "dns-hijack": [
+      "any:53",             // 劫持所有DNS端口
+      "tcp://8.8.8.8:53",   // 拦截谷歌DNS
+      "tcp://1.1.1.1:53",   // 拦截Cloudflare DNS
+      "udp://9.9.9.9:53"    // 拦截Quad9 DNS
+    ],
+    "auto-route": true,
+    "auto-detect-interface": true,
+    "strict-route": true,   // 强制所有流量经过TUN
+    "mtu": 9000,           // 优化吞吐量
+    "endpoint-independent-nat": true
   };
 
   // 覆盖策略组
@@ -379,12 +431,25 @@ function main(config) {
       "behavior": "classical",
       "url": "https://github.com/Repcz/Tool/raw/X/Clash/Rules/ChinaDomain.list",
       "path": "./rule-providers/China.list"
+    },
+    "DNS": {
+      ...ruleProviderCommon,
+     "behavior": "classical",
+     "url": "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/refs/heads/master/rule/Clash/DNS/DNS.list", 
+     "path": "./rule-providers/DNS.list"
+    
     }
   };
 
   // 覆盖规则
   config["rules"] = [
-  // 自定义规则
+  // === 1. 优先拦截DNS泄漏检测 ===
+    "RULE-SET,DNS,REJECT",
+    "DOMAIN-KEYWORD,stun,REJECT",
+    "DOMAIN-KEYWORD,webrtc,REJECT",
+    "DOMAIN-SUFFIX,dnsleaktest.com,REJECT",
+    "DOMAIN-SUFFIX,browserleaks.com,REJECT",
+ // 自定义规则
     "DOMAIN-SUFFIX,aktv.top,Emby",
     "DOMAIN-SUFFIX,jd.com,DIRECT",
     "DOMAIN-SUFFIX,gwdang.com,DIRECT",
@@ -424,6 +489,7 @@ function main(config) {
     "GEOSITE,github,国际媒体",
     "GEOSITE,microsoft,微软服务",
     "GEOSITE,gfw,国外网站",
+    "GEOSITE,cn,DIRECT",
     "RULE-SET,China,DIRECT",
     "GEOIP,lan,DIRECT",
     "GEOIP,CN,DIRECT",
