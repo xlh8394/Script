@@ -97,10 +97,10 @@ function main(config) {
     },
     {
       ...groupBaseOption,
-      "name": "国际媒体",
+      "name": "国外媒体",
       "type": "select",
       "proxies": ["手动切换", "香港节点", "美国节点", "狮城节点", "日本节点", "台湾节点", "DIRECT"],
-      "icon": "https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/YouTube.png"
+      "icon": "https://fastly.jsdelivr.net/gh/Koolson/Qure@master/IconSet/Color/ForeignMedia.png"
     },
     {
       ...groupBaseOption,
@@ -365,11 +365,11 @@ function main(config) {
     "RULE-SET,Epic,游戏平台",
     "RULE-SET,Emby,Emby",
     "RULE-SET,Spotify,Spotify",
-    "RULE-SET,Bahamut,国际媒体",
-    "RULE-SET,Netflix,国际媒体",
-    "RULE-SET,Disney,国际媒体",
+    "RULE-SET,Bahamut,国外媒体",
+    "RULE-SET,Netflix,国外媒体",
+    "RULE-SET,Disney,国外媒体",
     "RULE-SET,PrimeVideo,国际媒体",
-    "RULE-SET,HBO,国际媒体",
+    "RULE-SET,HBO,国外媒体",
     "GEOSITE,onedrive,微软服务",
     "GEOSITE,github,微软服务",
     "GEOSITE,microsoft,微软服务",
