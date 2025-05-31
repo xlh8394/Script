@@ -368,7 +368,7 @@ function main(config) {
     "RULE-SET,Bahamut,国外媒体",
     "RULE-SET,Netflix,国外媒体",
     "RULE-SET,Disney,国外媒体",
-    "RULE-SET,PrimeVideo,国际媒体",
+    "RULE-SET,PrimeVideo,国外媒体",
     "RULE-SET,HBO,国外媒体",
     "GEOSITE,onedrive,微软服务",
     "GEOSITE,github,微软服务",
