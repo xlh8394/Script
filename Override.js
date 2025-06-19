@@ -224,12 +224,6 @@ function main(config) {
 
   // 覆盖规则集
   config["rule-providers"] = {
-    "AD": {
-      ...ruleProviderCommon,
-      "behavior": "classical",
-      "url": "https://github.com/Repcz/Tool/raw/X/mihomo/Rules/Reject.list",
-      "path": "./rules/AD.list"
-    },
     "Apple": {
       ...ruleProviderCommon,
       "behavior": "classical",
@@ -354,7 +348,6 @@ function main(config) {
 
   // 覆盖规则
   config["rules"] = [
-    "RULE-SET,AD,REJECT",
     "RULE-SET,AI,AI",
     "RULE-SET,Apple,苹果服务",
     "RULE-SET,YouTube,谷歌服务",
