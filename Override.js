@@ -275,7 +275,7 @@ function main(config) {
     "Emby": {
       ...ruleProviderCommon,
       "behavior": "classical",
-      "url": "https://github.com/Repcz/Tool/raw/X/mihomo/Rules/Emby.list",
+      "url": "https://raw.githubusercontent.com/xlh8394/clashemby/refs/heads/main/Emby.yaml",
       "path": "./rules/Emby.list"
     },
     "Spotify": {
