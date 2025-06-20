@@ -276,7 +276,7 @@ function main(config) {
       ...ruleProviderCommon,
       "behavior": "classical",
       "url": "https://raw.githubusercontent.com/xlh8394/clashemby/refs/heads/main/Emby.yaml",
-      "path": "./rules/Emby.list"
+      "path": "./rules/Emby.yaml"
     },
     "Spotify": {
       ...ruleProviderCommon,
