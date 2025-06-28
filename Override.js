@@ -319,7 +319,7 @@ function main(config) {
     "HBO": {
       ...ruleProviderCommon,
       "behavior": "classical",
-      "url": "https://raw.githubusercontent.com/Repcz/Tool/X/mihomo/Rules/HBO.list",
+      "url": "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/refs/heads/master/rule/Clash/HBO/HBO.list",
       "path": "./rules/HBO.list"
     },
     "OneDrive": {
