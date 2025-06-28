@@ -356,6 +356,13 @@ function main(config) {
 
   // 覆盖规则
   config["rules"] = [
+    // 自定义规则
+    "DOMAIN-SUFFIX,googleapis.cn,手动切换", // Google服务
+    "DOMAIN-SUFFIX,gstatic.com,手动切换", // Google静态资源
+    "DOMAIN-SUFFIX,xn--ngstr-lra8j.com,手动切换", // Google Play下载服务
+    "DOMAIN-SUFFIX,github.io,手动切换", // Github Pages
+    "DOMAIN,v2rayse.com,手动切换", // V2rayse节点工具
+    // Loyalsoldier 规则集
     "RULE-SET,AI,AI",
     "RULE-SET,Apple,苹果服务",
     "RULE-SET,YouTube,谷歌服务",
