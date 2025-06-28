@@ -84,9 +84,17 @@ function main(config) {
       ...groupBaseOption,
       "name": "手动切换",
       "type": "select",
-      "proxies": ["香港节点", "美国节点", "新加坡节点", "日本节点", "台湾节点", "DIRECT"],
+      "proxies": ["延迟选优", "香港节点", "美国节点", "新加坡节点", "日本节点", "台湾节点", "DIRECT"],
       "include-all": true,
       "icon": "https://fastly.jsdelivr.net/gh/Koolson/Qure@master/IconSet/Color/Available.png"
+    },
+    {
+      ...groupBaseOption,
+      "name": "延迟选优",
+      "type": "url-test",
+      "tolerance": 100,
+      "include-all": true,
+      "icon": "https://fastly.jsdelivr.net/gh/clash-verge-rev/clash-verge-rev.github.io@main/docs/assets/icons/speed.svg"
     },
     {
       ...groupBaseOption,
