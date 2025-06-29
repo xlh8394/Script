@@ -373,7 +373,7 @@ function main(config) {
     "RULE-SET,Epic,游戏平台",
     "RULE-SET,Emby,Emby",
     "RULE-SET,Spotify,Spotify",
-    "RULE-SET,Bahamut,国外媒体",
+    "RULE-SET,Bahamut,台湾节点",
     "RULE-SET,Netflix,国外媒体",
     "RULE-SET,Disney,国外媒体",
     "RULE-SET,PrimeVideo,国外媒体",
