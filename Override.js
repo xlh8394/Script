@@ -349,8 +349,8 @@ function main(config) {
     "ProxyGFW": {
       ...ruleProviderCommon,
       "behavior": "classical",
-      "url": "https://raw.githubusercontent.com/Repcz/Tool/X/mihomo/Rules/ProxyGFW.list",
-      "path": "./rules/ProxyGFW.list"
+      "url": "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/refs/heads/master/rule/Clash/Proxy/Proxy.list",
+      "path": "./rules/Proxy.list"
     }
   };
 
