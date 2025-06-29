@@ -41,7 +41,11 @@ function main(config) {
     "enhanced-mode": "fake-ip",
     "fake-ip-range": "198.18.0.1/16",
     "fake-ip-filter": ["*", "+.lan", "+.local", "+.direct", "+.msftconnecttest.com", "+.msftncsi.com"],
-    "nameserver": ["223.5.5.5", "119.29.29.29"]
+    "nameserver": ["223.5.5.5", "119.29.29.29", "8.8.8.8", "1.1.1.1"],
+    "nameserver-policy": {
+      "geosite:cn": ["223.5.5.5", "119.29.29.29"],
+      "geosite:gfw": ["8.8.8.8", "1.1.1.1"]
+    }
   };
 
   // 覆盖 geodata 配置
@@ -55,27 +59,31 @@ function main(config) {
 
   // 覆盖 sniffer 配置
   config["sniffer"] = {
-    "enable": true,
-    "parse-pure-ip": true,
-    "sniff": {
-      "TLS": {
-        "ports": ["443", "8443"]
-      },
-      "HTTP": {
-        "ports": ["80", "8080-8880"],
-        "override-destination": true
-      },
-      "QUIC": {
-        "ports": ["443", "8443"]
-      }
+  "enable": true,
+  "parse-pure-ip": true,
+  "sniff": {
+    "TLS": {
+      "ports": ["443", "8443"],
+      "domains": ["+.youtube.com", "+.google.com"]
+    },
+    "HTTP": {
+      "ports": ["80", "8080-8880"],
+      "override-destination": true,
+      "domains": ["+.netflix.com"]
+    },
+    "QUIC": {
+      "ports": ["443", "8443"]
     }
+  }
   };
 
   // 覆盖 tun 配置
   config["tun"] = {
-    "enable": true,
-    "stack": "mixed",
-    "dns-hijack": ["any:53"]
+  "enable": true,
+  "stack": "mixed",
+  "dns-hijack": ["any:53"],
+  "auto-route": true,
+  "auto-detect-interface": true
   };
 
   // 覆盖策略组
